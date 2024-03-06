@@ -29,5 +29,16 @@ function Impuestos(estado) {
   return impuesto;
 }
 
-export { totalizador, Impuestos,totalizador_Precio_Neto };
+function calcularPrecioTotalImpuesto(cantidad, precio, estado) {
+  let impuesto = 0;
+
+ if (estado === "CA") {
+    impuesto = 8.25;
+ }
+  const precioTotalImpuesto = ((cantidad * precio * impuesto) / 100)+cantidad*precio;
+
+  return precioTotalImpuesto.toFixed(2);
+}
+
+export { totalizador, Impuestos,totalizador_Precio_Neto,calcularPrecioTotalImpuesto };
 

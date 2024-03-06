@@ -1,4 +1,4 @@
-import { totalizador,Impuestos,totalizador_Precio_Neto } from './totalizador';
+import { totalizador,Impuestos,totalizador_Precio_Neto,calcularPrecioTotalImpuesto } from './totalizador';
 
 describe("Totalizador", () => {
   it("deberia mostrar en pantalla la cantidad de items ingresado", () => {
@@ -36,6 +36,14 @@ describe("Impuestos", () => {
   });
  it("deberia delvolver el impuesto del estado seleccionado en este caso de AL", () => {
    expect(Impuestos("AL")).toEqual(4.00);
+  });
+
+});
+
+describe("calcularPrecioTotalImpuesto", () => {
+
+  it("deberia delvolver el precio total con impuesto del estado seleccionado en este caso de CA", () => {
+    expect(calcularPrecioTotalImpuesto(2,3,"CA")).toEqual("6.50");
   });
 
 });
