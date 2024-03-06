@@ -1,14 +1,25 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Totalizador</title>
+</head>
   <body>
-    <h1>Sumador</h1>
-    <form id="sumar-form">
-      <label for="primer-numero">Primer número:</label>
-      <input type="number" id="primer-numero" />
-      <label for="segundo-numero">Segundo número:</label>
-      <input type="number" id="segundo-numero" />
-      <input type="submit" value="Sumar" id="sumar-button" />
+    <h1>Totalizador</h1>
+    <form id="totalizador-form">
+      <div>
+        <label for="cantidad">Cantidad de Item:</label>
+        <input type="number" id="cantidad" />
+      </div>
+      <br>
+      <br>
+      <input type="submit" value="totalizador" id="totalizador-button" />
+
     </form>
-    <div id="resultado-div"></div>
+    <div id="resultado1-div"></div>
+
 
     <script type="module" src="./src/presenter.js"></script>
   </body>
