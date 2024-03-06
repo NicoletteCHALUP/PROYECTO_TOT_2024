@@ -1,4 +1,4 @@
-import { totalizador, Impuestos } from './totalizador.js';
+import { totalizador, Impuestos,totalizador_Precio_Neto } from './totalizador.js';
 
 const cantidad = document.querySelector("#cantidad");
 const precio = document.querySelector("#precio");
@@ -20,5 +20,7 @@ form.addEventListener("submit", (event) => {
   <p> Precio: ${totalizador(Precio)} </p>
   <p> Estado: ${totalizador(Estado)} </p>
   <p> Impuesto (${impuesto}%): $${impuesto.toFixed(2)} </p>
+  <p>Precio Neto (${Cantidad} * $${Precio}): $${totalizador_Precio_Neto(Cantidad, Precio)}</p>
+
 `;
 });

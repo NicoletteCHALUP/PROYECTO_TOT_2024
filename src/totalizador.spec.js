@@ -1,4 +1,4 @@
-import { totalizador,Impuestos } from './totalizador';
+import { totalizador,Impuestos,totalizador_Precio_Neto } from './totalizador';
 
 describe("Totalizador", () => {
   it("deberia mostrar en pantalla la cantidad de items ingresado", () => {
@@ -10,6 +10,13 @@ describe("Totalizador", () => {
   it("deberia mostrar en pantalla el estado seleccionado", () => {
     expect(totalizador("UT")).toEqual("UT");
   });
+});
+
+describe("totalizador_Precio_Neto", () => {
+  it("deberia delvolver el numero ingresado del precio neto  de item respectivo con la cantidad", () => {
+    expect(totalizador_Precio_Neto(3,4)).toEqual(12);
+  });
+ 
 });
 
 describe("Impuestos", () => {

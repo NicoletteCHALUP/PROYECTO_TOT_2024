@@ -2,6 +2,9 @@ function totalizador(a) {
   return a;
 }
 
+function totalizador_Precio_Neto(cantidad, precio) {
+  return cantidad*precio;
+}
 function Impuestos(estado) {
   let impuesto = 0;
   switch (estado) {
@@ -26,5 +29,5 @@ function Impuestos(estado) {
   return impuesto;
 }
 
-export { totalizador, Impuestos };
+export { totalizador, Impuestos,totalizador_Precio_Neto };
 
