@@ -30,20 +30,17 @@ function Impuestos(estado) {
 }
 
 function calcularPrecioTotalImpuesto(cantidad, precio, estado) {
-  let impuesto = 0;
+  const impuestos = {
+      "CA": 8.25,
+      "TX": 6.25,
+      "AL": 4.00,
+      "UT": 6.65,
+      "NV": 8.00
+  };
 
- if (estado === "CA") {
-    impuesto = 8.25;
-  } else if (estado === "TX") {
-    impuesto = 6.25;
-  } else if (estado === "AL") {
-    impuesto = 4.00;
-  }else if (estado === "UT") {
-    impuesto = 6.65;
-  }else if (estado === "NV") {
-    impuesto = 8.00;
-  } 
-  const precioTotalImpuesto = ((cantidad * precio * impuesto) / 100)+cantidad*precio;
+  const impuesto = impuestos[estado] || 0;
+  const precioNeto = cantidad * precio;
+  const precioTotalImpuesto = (precioNeto * impuesto) / 100 + precioNeto;
 
   return precioTotalImpuesto.toFixed(2);
 }
