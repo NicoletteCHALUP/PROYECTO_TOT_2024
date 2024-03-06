@@ -40,6 +40,8 @@ function calcularPrecioTotalImpuesto(cantidad, precio, estado) {
     impuesto = 4.00;
   }else if (estado === "UT") {
     impuesto = 6.65;
+  }else if (estado === "NV") {
+    impuesto = 8.00;
   } 
   const precioTotalImpuesto = ((cantidad * precio * impuesto) / 100)+cantidad*precio;
 
