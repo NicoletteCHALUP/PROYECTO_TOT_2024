@@ -48,4 +48,7 @@ describe("calcularPrecioTotalImpuesto", () => {
   it("deberia delvolver el precio total con impuesto del estado seleccionado en este caso de TX", () => {
     expect(calcularPrecioTotalImpuesto(2,3,"TX")).toEqual("6.38");
   });
+  it("deberia delvolver el precio total con impuesto del estado seleccionado en este caso de AL", () => {
+    expect(calcularPrecioTotalImpuesto(2,3,"AL")).toEqual("6.24");
+  });
 });
