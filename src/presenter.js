@@ -32,6 +32,6 @@ form.addEventListener("submit", (event) => {
   <p>Precio Neto (${Cantidad} * $${Precio}): $${PrecioNeto}</p>
   <p> Descuento (%${Descuento*100}): $${TotalDescuento} </p>
   <p> Impuesto para ${Estado}(%${impuesto}): $${(impuesto.toFixed(2)/100) * PrecioNeto} </p>
-  <p>Precio Total (descuento e impuesto): $${Precio_TotalconCategoria.toFixed(2)}</p>
+  <p>Precio Total (descuento,impuesto e Categoria): $${Precio_TotalconCategoria.toFixed(2)}</p>
 `;
 });
