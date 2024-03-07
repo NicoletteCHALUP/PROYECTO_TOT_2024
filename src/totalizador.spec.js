@@ -113,7 +113,13 @@ describe("Calcular Total Descuento", () => {
       const TotalImpuestoCat= Number.parseFloat(TotalImpuestoCategoria(1000,impuesto));
       expect(PrecioTotalconCategoria(2000,TotalDescuentoCat,TotalImpuestoCat)).toEqual("2070.00");
     });
-   
+    it("deberia mostrar el descuento e impuesto calculado correspondiente a Material de Escritorio y mostrarlo en precio total", () => {
+      const descuento= Number.parseFloat(DescuentoCategoria("Material_de_escritorio"));
+      const impuesto= Number.parseFloat(ImpuestoCategoria("Material_de_escritorio"));
+      const TotalDescuentoCat= Number.parseFloat(TotalDescuentoCategoria(1000,descuento));
+      const TotalImpuestoCat= Number.parseFloat(TotalImpuestoCategoria(1000,impuesto));
+      expect(PrecioTotalconCategoria(2000,TotalDescuentoCat,TotalImpuestoCat)).toEqual("1985.00");
+    });
   });
   
 });

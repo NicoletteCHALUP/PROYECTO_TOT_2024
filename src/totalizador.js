@@ -105,8 +105,11 @@ function DescuentoCategoria(categoria) {
     case "Alimentos":
       descuento_categoria = 0.02;
       break;
-      case "Bebidas_alcoholicas":
-        descuento_categoria = 0;
+    case "Bebidas_alcoholicas":
+      descuento_categoria = 0;
+      break;
+    case "Material_de_escritorio":
+      descuento_categoria = 0.015;
       break;
     default:
       descuento_categoria = 0;
@@ -119,8 +122,11 @@ function ImpuestoCategoria(categoria) {
     case "Alimentos":
       impuesto_categoria = 0;
       break;
-      case "Bebidas_alcoholicas":
+    case "Bebidas_alcoholicas":
       impuesto_categoria = 0.07;
+      break;
+    case "Material_de_escritorio":
+      impuesto_categoria = 0;
       break;
     default:
       impuesto_categoria = 0;
