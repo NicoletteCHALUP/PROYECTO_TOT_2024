@@ -53,9 +53,16 @@ function Descuentos(precioNeto) {
   }
   else{
 
-    if (precioNeto >= 3000)
+    if (precioNeto >= 3000 && precioNeto<7000)
     {
       descuento=0.05;
+    }
+    else
+    {
+      if (precioNeto >= 7000)
+      {
+        descuento=0.07;
+      }
     }
 
   }
