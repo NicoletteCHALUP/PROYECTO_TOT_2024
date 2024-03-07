@@ -20,7 +20,7 @@ form.addEventListener("submit", (event) => {
   const TotalDescuento=calcularDescuento(PrecioNeto, Descuento);
   const PrecioTotal= calcularPrecioTotal(PrecioTotalImpuesto,TotalDescuento);
   div.innerHTML = `
-  <p>Precio Neto (${Cantidad} * $${Precio}): $${totalizador_Precio_Neto(Cantidad, Precio)}</p>
+  <p>Precio Neto (${Cantidad} * $${Precio}): $${PrecioNeto}</p>
   <p> Descuento (%${Descuento*100}): $${TotalDescuento} </p>
   <p> Impuesto para ${Estado}(%${impuesto}): $${(impuesto.toFixed(2)/100) * PrecioNeto} </p>
   <p>Precio Total (descuento e impuesto): $${PrecioTotal}</p>

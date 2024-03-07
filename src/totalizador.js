@@ -47,9 +47,17 @@ function calcularPrecioTotalImpuesto(cantidad, precio, estado) {
 
 function Descuentos(precioNeto) {
   let descuento = 0;
-  if (precioNeto >= 1000)
+  if (precioNeto >= 1000 && precioNeto<3000)
   {
     descuento=0.03;
+  }
+  else{
+
+    if (precioNeto >= 3000)
+    {
+      descuento=0.05;
+    }
+
   }
   return descuento;
 }
