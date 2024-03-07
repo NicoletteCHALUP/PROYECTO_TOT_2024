@@ -28,7 +28,7 @@ form.addEventListener("submit", (event) => {
   
   div.innerHTML = `
   <p> Descuento por Categoria ${Categoria}(%${descuentoCategoria*100}): $${Total_DescuentoCategoria} </p>
-  <p> Impuesto para ${Categoria}(%${impuestoCategoria}): $${Total_ImpuestoCategoria} </p>
+  <p> Impuesto para ${Categoria}(%${impuestoCategoria*100}): $${Total_ImpuestoCategoria} </p>
   <p>Precio Neto (${Cantidad} * $${Precio}): $${PrecioNeto}</p>
   <p> Descuento (%${Descuento*100}): $${TotalDescuento} </p>
   <p> Impuesto para ${Estado}(%${impuesto}): $${(impuesto.toFixed(2)/100) * PrecioNeto} </p>

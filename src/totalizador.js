@@ -105,6 +105,9 @@ function DescuentoCategoria(categoria) {
     case "Alimentos":
       descuento_categoria = 0.02;
       break;
+      case "Bebidas_alcoholicas":
+        descuento_categoria = 0;
+      break;
     default:
       descuento_categoria = 0;
   }
@@ -115,6 +118,9 @@ function ImpuestoCategoria(categoria) {
   switch (categoria) {
     case "Alimentos":
       impuesto_categoria = 0;
+      break;
+      case "Bebidas_alcoholicas":
+      impuesto_categoria = 0.07;
       break;
     default:
       impuesto_categoria = 0;

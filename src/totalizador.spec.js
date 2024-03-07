@@ -106,6 +106,13 @@ describe("Calcular Total Descuento", () => {
       const TotalImpuestoCat= Number.parseFloat(TotalImpuestoCategoria(1000,impuesto));
       expect(PrecioTotalconCategoria(2000,TotalDescuentoCat,TotalImpuestoCat)).toEqual("1980.00");
     });
+    it("deberia mostrar el descuento e impuesto calculado correspondiente a Bebidas alcoholicas y mostrarlo en precio total", () => {
+      const descuento= Number.parseFloat(DescuentoCategoria("Bebidas_alcoholicas"));
+      const impuesto= Number.parseFloat(ImpuestoCategoria("Bebidas_alcoholicas"));
+      const TotalDescuentoCat= Number.parseFloat(TotalDescuentoCategoria(1000,descuento));
+      const TotalImpuestoCat= Number.parseFloat(TotalImpuestoCategoria(1000,impuesto));
+      expect(PrecioTotalconCategoria(2000,TotalDescuentoCat,TotalImpuestoCat)).toEqual("2070.00");
+    });
    
   });
   
