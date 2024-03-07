@@ -117,7 +117,9 @@ function DescuentoCategoria(categoria) {
     case "Electronicos":
       descuento_categoria = 0.01;
       break;
-  
+    case "Vestimenta":
+      descuento_categoria = 0;
+      break;
     default:
       descuento_categoria = 0;
   }
@@ -140,6 +142,9 @@ function ImpuestoCategoria(categoria) {
       break;
     case "Electronicos":
       impuesto_categoria = 0.04;
+      break;
+    case "Vestimenta":
+      impuesto_categoria = 0.02;
       break;
    
     default:
