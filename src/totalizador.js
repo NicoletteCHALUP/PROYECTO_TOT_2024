@@ -111,6 +111,9 @@ function DescuentoCategoria(categoria) {
     case "Material_de_escritorio":
       descuento_categoria = 0.015;
       break;
+    case "Muebles":
+      descuento_categoria = 0;
+      break;
     default:
       descuento_categoria = 0;
   }
@@ -127,6 +130,9 @@ function ImpuestoCategoria(categoria) {
       break;
     case "Material_de_escritorio":
       impuesto_categoria = 0;
+      break;
+    case "Muebles":
+      impuesto_categoria = 0.03;
       break;
     default:
       impuesto_categoria = 0;
