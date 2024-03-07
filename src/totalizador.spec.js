@@ -37,6 +37,9 @@ describe("Impuestos", () => {
  it("deberia delvolver el impuesto del estado seleccionado en este caso de AL", () => {
    expect(Impuestos("AL")).toEqual(4.00);
   });
+  it("deberia delvolver el impuesto del estado seleccionado en el caso de default", () => {
+    expect(Impuestos("GG")).toEqual(0);
+   });
 
 });
 
@@ -57,6 +60,9 @@ describe("calcularPrecioTotalImpuesto", () => {
 
   it("deberia delvolver el precio total con impuesto del estado seleccionado en este caso de NV", () => {
     expect(calcularPrecioTotalImpuesto(2,3,"NV")).toEqual("6.48");
+  });
+  it("deberia delvolver el precio total con impuesto del estado seleccionado en este caso de NV", () => {
+    expect(calcularPrecioTotalImpuesto(2,3,"")).toEqual("6.00");
   });
 });
 
@@ -86,6 +92,11 @@ describe("Calcular Total Descuento", () => {
     const descuento=Descuentos(30000);
     const TotalDescuento= calcularDescuento(30000,descuento);
     expect(calcularPrecioTotal(30000,TotalDescuento)).toEqual("25500.00");
+  });
+  it("deberia mostrar el descuento calculado correspondiente a 30000 y mostrarlo en precio total", () => {
+    const descuento=Descuentos(10);
+    const TotalDescuento= calcularDescuento(10,descuento);
+    expect(calcularPrecioTotal(10,TotalDescuento)).toEqual("10.00");
   });
   
 });
