@@ -114,6 +114,10 @@ function DescuentoCategoria(categoria) {
     case "Muebles":
       descuento_categoria = 0;
       break;
+    case "Electronicos":
+      descuento_categoria = 0.01;
+      break;
+  
     default:
       descuento_categoria = 0;
   }
@@ -134,6 +138,10 @@ function ImpuestoCategoria(categoria) {
     case "Muebles":
       impuesto_categoria = 0.03;
       break;
+    case "Electronicos":
+      impuesto_categoria = 0.04;
+      break;
+   
     default:
       impuesto_categoria = 0;
   }

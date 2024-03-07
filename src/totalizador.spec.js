@@ -127,6 +127,14 @@ describe("Calcular Total Descuento", () => {
       const TotalImpuestoCat= Number.parseFloat(TotalImpuestoCategoria(1000,impuesto));
       expect(PrecioTotalconCategoria(2000,TotalDescuentoCat,TotalImpuestoCat)).toEqual("2030.00");
     });
+    it("deberia mostrar el descuento e impuesto calculado correspondiente a Electrónicos y mostrarlo en precio total", () => {
+      const descuento= Number.parseFloat(DescuentoCategoria("Electronicos"));
+      const impuesto= Number.parseFloat(ImpuestoCategoria("Electronicos"));
+      const TotalDescuentoCat= Number.parseFloat(TotalDescuentoCategoria(1000,descuento));
+      const TotalImpuestoCat= Number.parseFloat(TotalImpuestoCategoria(1000,impuesto));
+      expect(PrecioTotalconCategoria(2000,TotalDescuentoCat,TotalImpuestoCat)).toEqual("2030.00");
+    });
+ 
   });
   
 });
