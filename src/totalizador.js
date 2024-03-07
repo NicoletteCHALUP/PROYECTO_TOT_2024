@@ -99,4 +99,41 @@ function calcularPrecioTotal(precioTotalImpuesto, TotalDescuento) {
 
   return PrecioTotalconDescuento.toFixed(2);
 }
-export { totalizador, Impuestos,totalizador_Precio_Neto,calcularPrecioTotalImpuesto,Descuentos,calcularDescuento,calcularPrecioTotal };
+function DescuentoCategoria(categoria) {
+  let descuento_categoria = 0;
+  switch (categoria) {
+    case "Alimentos":
+      descuento_categoria = 0.02;
+      break;
+    default:
+      descuento_categoria = 0;
+  }
+  return descuento_categoria;
+}
+function ImpuestoCategoria(categoria) {
+  let impuesto_categoria = 0;
+  switch (categoria) {
+    case "Alimentos":
+      impuesto_categoria = 0;
+      break;
+    default:
+      impuesto_categoria = 0;
+  }
+  return impuesto_categoria;
+}
+function TotalDescuentoCategoria(PrecioNeto,descuentoCategoria) {
+  const Total_descuentoCategoria=PrecioNeto*descuentoCategoria;
+
+  return Total_descuentoCategoria.toFixed(2);
+}
+function TotalImpuestoCategoria(PrecioNeto,ImpuestoCategoria) {
+  const Total_impuestoCategoria=PrecioNeto*ImpuestoCategoria;
+
+  return Total_impuestoCategoria.toFixed(2);
+}
+function PrecioTotalconCategoria(PrecioTotal,Total_DescuentoCategoria,Total_impuestoCategoria) {
+  const Precio_TotalconCategoria = PrecioTotal + Total_impuestoCategoria - Total_DescuentoCategoria;
+
+  return Precio_TotalconCategoria.toFixed(2);
+}
+export { totalizador, Impuestos,totalizador_Precio_Neto,calcularPrecioTotalImpuesto,Descuentos,calcularDescuento,calcularPrecioTotal,DescuentoCategoria,TotalDescuentoCategoria,TotalImpuestoCategoria,PrecioTotalconCategoria,ImpuestoCategoria };

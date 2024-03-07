@@ -1,4 +1,4 @@
-import { totalizador, Impuestos,totalizador_Precio_Neto,calcularPrecioTotalImpuesto,Descuentos,calcularDescuento,calcularPrecioTotal } from './totalizador.js';
+import { totalizador, Impuestos,totalizador_Precio_Neto,calcularPrecioTotalImpuesto,Descuentos,calcularDescuento,calcularPrecioTotal,DescuentoCategoria,TotalDescuentoCategoria,TotalImpuestoCategoria,PrecioTotalconCategoria,ImpuestoCategoria } from './totalizador.js';
 
 describe("Totalizador", () => {
   it("deberia mostrar en pantalla la cantidad de items ingresado", () => {
@@ -97,6 +97,16 @@ describe("Calcular Total Descuento", () => {
     const descuento=Descuentos(10);
     const TotalDescuento= calcularDescuento(10,descuento);
     expect(calcularPrecioTotal(10,TotalDescuento)).toEqual("10.00");
+  });
+  describe("Descuento Categoria", () => {
+    it("deberia mostrar el descuento e impuesto calculado correspondiente a Alimentos y mostrarlo en precio total", () => {
+      const descuento= Number.parseFloat(DescuentoCategoria("Alimentos"));
+      const impuesto= Number.parseFloat(ImpuestoCategoria("Alimentos"));
+      const TotalDescuentoCat= Number.parseFloat(TotalDescuentoCategoria(1000,descuento));
+      const TotalImpuestoCat= Number.parseFloat(TotalImpuestoCategoria(1000,impuesto));
+      expect(PrecioTotalconCategoria(2000,TotalDescuentoCat,TotalImpuestoCat)).toEqual("1980.00");
+    });
+   
   });
   
 });
