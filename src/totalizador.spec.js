@@ -148,6 +148,13 @@ describe("Calcular Total Descuento", () => {
       const TotalImpuestoCat= Number.parseFloat(TotalImpuestoCategoria(1000,impuesto));
       expect(PrecioTotalconCategoria(2000,TotalDescuentoCat,TotalImpuestoCat)).toEqual("2000.00");
     });
+    it("deberia mostrar el descuento e impuesto calculado correspondiente si no se manda ninguna dato a impuesto y mostrarlo en precio total", () => {
+      const descuento= Number.parseFloat(DescuentoCategoria("Varios"));
+      const impuesto= Number.parseFloat(ImpuestoCategoria(""));
+      const TotalDescuentoCat= Number.parseFloat(TotalDescuentoCategoria(1000,descuento));
+      const TotalImpuestoCat= Number.parseFloat(TotalImpuestoCategoria(1000,impuesto));
+      expect(PrecioTotalconCategoria(2000,TotalDescuentoCat,TotalImpuestoCat)).toEqual("2000.00");
+    });
   });
   
 });
