@@ -45,5 +45,26 @@ function calcularPrecioTotalImpuesto(cantidad, precio, estado) {
   return precioTotalImpuesto.toFixed(2);
 }
 
-export { totalizador, Impuestos,totalizador_Precio_Neto,calcularPrecioTotalImpuesto };
+function Descuentos(precioNeto) {
+  let descuento = 0;
+  if (precioNeto >= 1000)
+  {
+    descuento=0.03;
+  }
+  return descuento;
+}
 
+function calcularDescuento(PrecioNeto,descuento) {
+  
+  const TotalDescuento = (PrecioNeto * descuento);
+ 
+  return TotalDescuento.toFixed(2);
+}
+function calcularPrecioTotal(precioTotalImpuesto, TotalDescuento) {
+  
+
+  const PrecioTotalconDescuento = precioTotalImpuesto-TotalDescuento;
+
+  return PrecioTotalconDescuento.toFixed(2);
+}
+export { totalizador, Impuestos,totalizador_Precio_Neto,calcularPrecioTotalImpuesto,Descuentos,calcularDescuento,calcularPrecioTotal };

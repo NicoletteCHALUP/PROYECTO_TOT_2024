@@ -1,4 +1,4 @@
-import { totalizador,Impuestos,totalizador_Precio_Neto,calcularPrecioTotalImpuesto } from './totalizador';
+import { totalizador, Impuestos,totalizador_Precio_Neto,calcularPrecioTotalImpuesto,Descuentos,calcularDescuento,calcularPrecioTotal } from './totalizador.js';
 
 describe("Totalizador", () => {
   it("deberia mostrar en pantalla la cantidad de items ingresado", () => {
@@ -58,4 +58,14 @@ describe("calcularPrecioTotalImpuesto", () => {
   it("deberia delvolver el precio total con impuesto del estado seleccionado en este caso de NV", () => {
     expect(calcularPrecioTotalImpuesto(2,3,"NV")).toEqual("6.48");
   });
+});
+
+describe("Calcular Total Descuento", () => {
+
+  it("deberia mostrar el descuento calculado correspondiente a 1000 y mostrarlo en precio total", () => {
+    const descuento=Descuentos(1000);
+    const TotalDescuento= calcularDescuento(1000,descuento);
+    expect(calcularPrecioTotal(1000,TotalDescuento)).toEqual("970.00");
+  });
+  
 });
