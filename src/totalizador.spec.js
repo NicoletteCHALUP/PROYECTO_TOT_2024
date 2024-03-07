@@ -77,5 +77,10 @@ describe("Calcular Total Descuento", () => {
     const TotalDescuento= calcularDescuento(7000,descuento);
     expect(calcularPrecioTotal(7000,TotalDescuento)).toEqual("6510.00");
   });
+  it("deberia mostrar el descuento calculado correspondiente a 10000 y mostrarlo en precio total", () => {
+    const descuento=Descuentos(10000);
+    const TotalDescuento= calcularDescuento(10000,descuento);
+    expect(calcularPrecioTotal(10000,TotalDescuento)).toEqual("9000.00");
+  });
   
 });
