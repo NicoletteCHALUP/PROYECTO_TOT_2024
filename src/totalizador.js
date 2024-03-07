@@ -120,6 +120,9 @@ function DescuentoCategoria(categoria) {
     case "Vestimenta":
       descuento_categoria = 0;
       break;
+    case "Varios":
+      descuento_categoria = 0;
+      break;
     default:
       descuento_categoria = 0;
   }
@@ -146,7 +149,9 @@ function ImpuestoCategoria(categoria) {
     case "Vestimenta":
       impuesto_categoria = 0.02;
       break;
-   
+    case "Varios":
+      impuesto_categoria = 0;
+      break;
     default:
       impuesto_categoria = 0;
   }
